@@ -18,8 +18,10 @@ resource "aws_instance" "ecs_instance" {
     connection {
       type        = "ssh"
       user        = "ec2-user"  # SSH user for the instance
-      private_key = file(""C:\Users\HP\.ssh\id_rsa"")  # Specify your SSH private key
       host        = self.public_ip  # Public IP address of the instance
+      private_key = file("C:\Users\HP\.ssh\id_rsa")  # Specify your SSH private key
+     # Passphrase for the private key
+      passphrase = ""
     }
   }
 }

@@ -19,7 +19,6 @@ resource "aws_instance" "ecs_instance" {
       type        = "ssh"
       user        = "ec2-user"  # SSH user for the instance
       host        = self.public_ip  # Public IP address of the instance
-      private_key = file("C:/Users/HP/.ppk/key.ppk")  # Specify your SSH private key
       agent       = true # Use SSH agent (Pageant)
     }
   }
